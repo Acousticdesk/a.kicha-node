@@ -1,0 +1,14 @@
+.registration-table {
+  display: table;
+  height: 100%;
+  width: 350px;
+  margin: 0 auto; }
+
+.registration-form {
+  width: 100%;
+  display: table-cell;
+  vertical-align: middle; }
+  .registration-form__title {
+    font-size: 3em; }
+
+/*# sourceMappingURL=styles.css.map */

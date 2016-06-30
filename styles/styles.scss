@@ -1,0 +1,13 @@
+@import "../vendors/bourbon/app/assets/stylesheets/_bourbon";
+@import "../vendors/fontawesome/scss/font-awesome";
+@import "Home/styles";
+
+html, body, #ng_view_container {
+  height: 100%;
+  overflow: visible;
+}
+
+// Angular ng-clock needed classes
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}

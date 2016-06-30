@@ -1,0 +1,118 @@
+<div class="registration-table">
+
+    <form name="registration_form" class="registration-form" novalidate>
+        <!-- Registration form title -->
+        <h6 class="registration-form__title">Registration</h6>
+
+        <!-- Password Hint -->
+        <div class="alert alert-warning" ng-show="registration_form.neofit_password.$error.isCorrectPasswordType" role="alert">
+            <p>
+                <strong>Password hint!</strong> Password must start from Capital letter, contain numbers and at least 8 characters
+                e.g: Capital54321
+            </p>
+        </div>
+
+        <!-- Registration Failed Hint -->
+        <div class="alert alert-warning" ng-show="registration_form.neofit_password.$error.isCorrectPasswordType" role="alert">
+            <p>
+                <strong>Password hint!</strong> Password must start from Capital letter, contain numbers and at least 8 characters
+                e.g: Capital54321
+            </p>
+        </div>
+
+        <!-- E-mail form-group -->
+        <div class="form-group">
+            <label for="mail_reg">Enter your mail:</label>
+            <input
+                    name="neofit_mail"
+                    ng-model="neofit.mail"
+                    ng-pattern="/^\w+@\w+\.\w+$/"
+                    required="required"
+                    type="email"
+                    class="form-control"
+                    id="mail_reg">
+        </div>
+
+        <!-- Password form-group -->
+        <div class="form-group">
+            <label for="password_reg">Enter your password:</label>
+            <div class="custom-input--password">
+                <input
+                        neofit-password
+                        name="neofit_password"
+                        ng-model="neofit.password"
+                        required="required"
+                        type="password"
+                        class="form-control password-input"
+                        id="password_reg">
+
+                <a show-password href="javascript: void(0);" class="show-password">
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button
+                ng-click="createAccount()"
+                class="registration-form__home-button btn btn-primary"
+                type="submit">Create my account</button>
+        <!-- Button trigger modal -->
+        <button
+                type="button"
+                class="registration-form__home-button--offset-xs btn btn-success"
+                data-toggle="modal"
+                data-target="#signin_modal">I already have account</button>
+    </form>
+
+    <!-- Signin Modal -->
+    <div class="modal fade" id="signin_modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    <h6 class="signin-modal__head">Hi there! Sign and let's have some fun!</h6>
+
+                    <form name="sign_form" action="">
+
+                        <!-- E-mail form-group -->
+                        <div class="form-group">
+                            <label for="mail_reg">Your mail:</label>
+                            <input
+                                    name="account_mail"
+                                    ng-model="account.mail"
+                                    type="email"
+                                    class="form-control"
+                                    id="account_mail">
+                        </div>
+
+                        <!-- Password form-group -->
+                        <div class="form-group">
+                            <label for="password_reg">Your password:</label>
+                            <div class="custom-input--password">
+                                <input
+                                        name="account_password"
+                                        ng-model="account.password"
+                                        type="password"
+                                        class="form-control password-input"
+                                        id="account_password">
+                            </div>
+                        </div>
+
+                        <!-- Button trigger modal -->
+                        <button
+                                ng-click="authenticate()"
+                                type="button"
+                                class="
+                                    btn
+                                    btn-success
+                                    registration-form__home-button--offset-xs">Let's Go!</button>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
